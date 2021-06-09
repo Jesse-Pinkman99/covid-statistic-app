@@ -1,0 +1,14 @@
+.tableHeader {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: #2196F3;
+    height: 80px;
+    color: white;
+    border-radius: 20px;
+}
+
+.paddingAndBorder {
+    border-left: 1px solid white;
+    padding-left: 24px;
+}

@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header/Header";
+import Table from "./components/Table/Table";
+import {countriesAPI} from "./api/api";
+import {useEffect} from "react";
+import {setCountries} from "./actions/actions";
+import {useDispatch} from "react-redux";
 
 function App() {
+    let dispatch = useDispatch()
+
+    const getCountries = () => {
+        countriesAPI.getCountries().then(response => {
+            dispatch(setCountries(response.Countries))
+        })
+    }
+
+    useEffect(() => {
+        getCountries()
+    }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Table/>
     </div>
   );
 }
