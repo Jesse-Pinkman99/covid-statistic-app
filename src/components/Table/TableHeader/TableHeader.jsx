@@ -7,7 +7,7 @@ const TableHeader = () => {
                 <tr>
                     <th width="79">№</th>
                     <th align="left" className="paddingAndBorder" width="65%">Country</th>
-                    <th align="left" className="paddingAndBorder">Total confirmed</th>
+                    <th align="left" className="paddingAndBorder">Total Confirmed</th>
                 </tr>
             </thead>
         </table>
